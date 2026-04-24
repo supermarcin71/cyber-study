@@ -1,0 +1,1534 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+<meta name="theme-color" content="#020617" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<meta name="apple-mobile-web-app-title" content="Cyber Study" />
+<meta name="mobile-web-app-capable" content="yes" />
+<meta name="format-detection" content="telephone=no" />
+<title>Cyberbezpieczeństwo i cyberwojna — 10 pytań</title>
+<meta name="description" content="Interaktywne notatki egzaminacyjne — 10 pytań, doktryna NATO, prawo polskie, flashcards. Offline-ready." />
+<!-- OG / Twitter -->
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Cyberbezpieczeństwo i cyberwojna — 10 pytań" />
+<meta property="og:description" content="Interaktywne notatki egzaminacyjne — 10 pytań, doktryna NATO, prawo polskie, flashcards." />
+<meta property="og:image" content="og-image.png" />
+<meta name="twitter:card" content="summary_large_image" />
+<!-- Icons & manifest -->
+<link rel="icon" type="image/svg+xml" href="icon.svg" />
+<link rel="apple-touch-icon" href="apple-touch-icon.png" />
+<link rel="manifest" href="manifest.webmanifest" />
+<link rel="stylesheet" href="tw.css" />
+<style>
+  :root {
+    --safe-top: env(safe-area-inset-top);
+    --safe-bottom: env(safe-area-inset-bottom);
+    --safe-left: env(safe-area-inset-left);
+    --safe-right: env(safe-area-inset-right);
+  }
+  html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Segoe UI', system-ui, sans-serif;
+    background: #020617;
+    color: #e2e8f0;
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    padding-left: var(--safe-left);
+    padding-right: var(--safe-right);
+  }
+  .font-mono { font-family: ui-monospace, 'SF Mono', Menlo, Monaco, Consolas, monospace; }
+
+  /* Animated mesh gradient background */
+  .mesh-bg {
+    position: fixed;
+    inset: 0;
+    z-index: -2;
+    background:
+      radial-gradient(at 20% 10%, rgba(30, 64, 175, 0.55) 0px, transparent 50%),
+      radial-gradient(at 80% 0%, rgba(14, 116, 144, 0.4) 0px, transparent 50%),
+      radial-gradient(at 80% 50%, rgba(79, 70, 229, 0.35) 0px, transparent 50%),
+      radial-gradient(at 0% 80%, rgba(37, 99, 235, 0.4) 0px, transparent 50%),
+      radial-gradient(at 50% 100%, rgba(6, 182, 212, 0.3) 0px, transparent 50%),
+      #020617;
+  }
+
+  /* Floating blurred orbs — reduced on mobile for performance */
+  .orb {
+    position: fixed;
+    border-radius: 9999px;
+    filter: blur(80px);
+    opacity: 0.5;
+    z-index: -1;
+    animation: float 20s ease-in-out infinite;
+    pointer-events: none;
+    will-change: transform;
+  }
+  .orb-1 { top: 10%; left: 10%; width: 400px; height: 400px; background: #2563eb; animation-delay: 0s; }
+  .orb-2 { top: 60%; right: 10%; width: 500px; height: 500px; background: #0891b2; animation-delay: -5s; }
+  .orb-3 { bottom: 10%; left: 30%; width: 450px; height: 450px; background: #4f46e5; animation-delay: -10s; }
+
+  @media (max-width: 768px) {
+    .orb { filter: blur(60px); opacity: 0.35; }
+    .orb-1, .orb-2, .orb-3 { width: 280px; height: 280px; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .orb, .gradient-text, .glow-dot, .shimmer { animation: none; }
+  }
+
+  @keyframes float {
+    0%, 100% { transform: translate(0, 0) scale(1); }
+    33% { transform: translate(50px, -50px) scale(1.1); }
+    66% { transform: translate(-30px, 30px) scale(0.95); }
+  }
+
+  /* Glass card */
+  .glass {
+    background: linear-gradient(135deg, rgba(30, 41, 59, 0.55), rgba(15, 23, 42, 0.35));
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    border: 1px solid rgba(148, 163, 184, 0.12);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  .glass:hover {
+    border-color: rgba(96, 165, 250, 0.4);
+    transform: translateY(-4px);
+    box-shadow: 0 30px 60px -15px rgba(37, 99, 235, 0.3), 0 0 40px -5px rgba(59, 130, 246, 0.25);
+  }
+
+  /* Gradient text */
+  .gradient-text {
+    background: linear-gradient(135deg, #60a5fa 0%, #a78bfa 50%, #22d3ee 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    background-size: 200% 200%;
+    animation: gradient-shift 8s ease infinite;
+  }
+  .gradient-text-blue {
+    background: linear-gradient(135deg, #60a5fa 0%, #3b82f6 50%, #1e40af 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+  .gradient-text-cyan {
+    background: linear-gradient(135deg, #22d3ee 0%, #3b82f6 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+
+  @keyframes gradient-shift {
+    0%, 100% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+  }
+
+  /* Grid background pattern */
+  .grid-pattern {
+    background-image:
+      linear-gradient(rgba(96, 165, 250, 0.06) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(96, 165, 250, 0.06) 1px, transparent 1px);
+    background-size: 60px 60px;
+  }
+
+  /* Reading progress bar */
+  .progress-bar {
+    position: fixed; top: 0; left: 0; height: 3px; width: 0%;
+    background: linear-gradient(90deg, #22d3ee, #3b82f6, #a78bfa);
+    z-index: 100;
+    transition: width 0.1s ease-out;
+    box-shadow: 0 0 20px #3b82f6;
+  }
+
+  /* Reveal on scroll */
+  .reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease, transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  .reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* Question number */
+  .q-number {
+    font-family: 'JetBrains Mono', monospace;
+    font-weight: 800;
+    font-size: clamp(4rem, 8vw, 7rem);
+    line-height: 1;
+    background: linear-gradient(135deg, #60a5fa 0%, #a78bfa 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    letter-spacing: -0.04em;
+  }
+
+  /* Glow dot */
+  .glow-dot {
+    width: 8px; height: 8px; border-radius: 50%;
+    background: #60a5fa;
+    box-shadow: 0 0 12px #60a5fa, 0 0 24px #3b82f6;
+    display: inline-block;
+    animation: pulse-dot 2s ease-in-out infinite;
+  }
+  @keyframes pulse-dot {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.5; transform: scale(1.2); }
+  }
+
+  /* Key callout */
+  .callout {
+    border-left: 3px solid;
+    border-image: linear-gradient(180deg, #60a5fa, #a78bfa) 1;
+    padding-left: 1rem;
+  }
+
+  /* Tag pill */
+  .tag {
+    display: inline-flex; align-items: center; gap: 0.4rem;
+    padding: 0.3rem 0.75rem;
+    border-radius: 9999px;
+    font-size: 0.75rem; font-weight: 500;
+    background: rgba(59, 130, 246, 0.12);
+    border: 1px solid rgba(96, 165, 250, 0.3);
+    color: #93c5fd;
+    font-family: 'JetBrains Mono', monospace;
+  }
+  .tag-cyan { background: rgba(6, 182, 212, 0.12); border-color: rgba(34, 211, 238, 0.3); color: #67e8f9; }
+  .tag-violet { background: rgba(139, 92, 246, 0.12); border-color: rgba(167, 139, 250, 0.3); color: #c4b5fd; }
+  .tag-rose { background: rgba(244, 63, 94, 0.12); border-color: rgba(251, 113, 133, 0.3); color: #fda4af; }
+
+  /* Table wrapper — horizontal scroll indicator on mobile */
+  .table-wrap {
+    position: relative;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scroll-snap-type: x proximity;
+  }
+  .table-wrap::after {
+    content: '';
+    position: sticky; right: 0; top: 0;
+    display: block; width: 36px; height: 100%;
+    background: linear-gradient(to left, rgba(15, 23, 42, 0.8), transparent);
+    pointer-events: none;
+    margin-left: -36px;
+  }
+  @media (min-width: 768px) { .table-wrap::after { display: none; } }
+
+  /* Table styling */
+  .cmp-table {
+    border-collapse: separate; border-spacing: 0;
+    width: 100%;
+    border-radius: 1rem;
+    overflow: hidden;
+    font-size: 0.9rem;
+  }
+  .cmp-table th, .cmp-table td {
+    padding: 0.85rem 1.1rem;
+    border-bottom: 1px solid rgba(148, 163, 184, 0.1);
+    text-align: left;
+  }
+  .cmp-table thead th {
+    background: linear-gradient(135deg, rgba(59, 130, 246, 0.2), rgba(139, 92, 246, 0.15));
+    font-weight: 600;
+    color: #dbeafe;
+  }
+  .cmp-table tr:last-child td { border-bottom: none; }
+  .cmp-table tbody tr:hover { background: rgba(59, 130, 246, 0.06); }
+
+  /* Hero glow */
+  .hero-glow::after {
+    content: ''; position: absolute; inset: 0;
+    background: radial-gradient(circle at 50% 50%, rgba(59, 130, 246, 0.35) 0%, transparent 60%);
+    filter: blur(60px);
+    z-index: -1;
+  }
+
+  /* Scroll nav */
+  .nav-link {
+    position: relative;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.7rem;
+    color: #64748b;
+    padding: 0.5rem 0.85rem;
+    border-radius: 0.5rem;
+    transition: all 0.3s;
+    white-space: nowrap;
+  }
+  .nav-link:hover, .nav-link.active {
+    color: #93c5fd;
+    background: rgba(59, 130, 246, 0.1);
+  }
+  .nav-link.active::before {
+    content: ''; position: absolute; left: -12px; top: 50%; transform: translateY(-50%);
+    width: 4px; height: 4px; border-radius: 50%; background: #60a5fa;
+    box-shadow: 0 0 8px #60a5fa;
+  }
+
+  /* Flashcard flip */
+  .flash-card {
+    perspective: 1000px;
+    height: 180px;
+    cursor: pointer;
+  }
+  .flash-inner {
+    position: relative; width: 100%; height: 100%;
+    transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+    transform-style: preserve-3d;
+  }
+  .flash-card.flipped .flash-inner { transform: rotateY(180deg); }
+  .flash-front, .flash-back {
+    position: absolute; inset: 0;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    padding: 1.25rem;
+    border-radius: 1rem;
+    display: flex; flex-direction: column; justify-content: center;
+    background: linear-gradient(135deg, rgba(30, 41, 59, 0.7), rgba(15, 23, 42, 0.5));
+    border: 1px solid rgba(148, 163, 184, 0.12);
+    backdrop-filter: blur(12px);
+  }
+  .flash-back {
+    transform: rotateY(180deg);
+    background: linear-gradient(135deg, rgba(30, 58, 138, 0.7), rgba(30, 41, 59, 0.5));
+    border-color: rgba(96, 165, 250, 0.3);
+  }
+
+  /* Accent line */
+  .accent-line {
+    width: 60px; height: 2px;
+    background: linear-gradient(90deg, #60a5fa, transparent);
+  }
+
+  /* Stat card */
+  .stat-num {
+    font-family: 'JetBrains Mono', monospace;
+    font-weight: 800; font-size: 3rem; line-height: 1;
+  }
+
+  /* Custom scrollbar */
+  ::-webkit-scrollbar { width: 8px; height: 8px; }
+  ::-webkit-scrollbar-track { background: #0f172a; }
+  ::-webkit-scrollbar-thumb { background: linear-gradient(180deg, #3b82f6, #1e40af); border-radius: 4px; }
+  ::-webkit-scrollbar-thumb:hover { background: linear-gradient(180deg, #60a5fa, #2563eb); }
+
+  /* Subtle shimmer for hero tag */
+  .shimmer {
+    background: linear-gradient(90deg, transparent, rgba(96, 165, 250, 0.2), transparent);
+    background-size: 200% 100%;
+    animation: shimmer 3s linear infinite;
+  }
+  @keyframes shimmer {
+    0% { background-position: 200% 0; }
+    100% { background-position: -200% 0; }
+  }
+
+  /* Mobile bottom navigation */
+  .mobile-nav {
+    position: fixed;
+    bottom: 0; left: 0; right: 0;
+    z-index: 50;
+    padding: 0.5rem calc(0.5rem + var(--safe-left)) calc(0.5rem + var(--safe-bottom)) calc(0.5rem + var(--safe-right));
+    background: linear-gradient(180deg, rgba(2, 6, 23, 0.4), rgba(2, 6, 23, 0.95));
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-top: 1px solid rgba(148, 163, 184, 0.12);
+    display: none;
+  }
+  @media (max-width: 1279px) {
+    .mobile-nav { display: block; }
+    body { padding-bottom: calc(70px + var(--safe-bottom)); }
+  }
+  .mobile-nav-inner {
+    display: flex; align-items: center; gap: 0.35rem;
+    overflow-x: auto;
+    scrollbar-width: none;
+    -webkit-overflow-scrolling: touch;
+    scroll-snap-type: x mandatory;
+    padding: 0.25rem;
+  }
+  .mobile-nav-inner::-webkit-scrollbar { display: none; }
+  .mnav-btn {
+    flex: 0 0 auto;
+    min-width: 44px; height: 44px;
+    display: inline-flex; align-items: center; justify-content: center;
+    border-radius: 12px;
+    font-family: ui-monospace, 'SF Mono', Menlo, monospace;
+    font-size: 0.8rem; font-weight: 600;
+    color: #64748b;
+    background: rgba(30, 41, 59, 0.5);
+    border: 1px solid rgba(148, 163, 184, 0.1);
+    scroll-snap-align: start;
+    transition: all 0.2s;
+    text-decoration: none;
+    padding: 0 0.75rem;
+    -webkit-tap-highlight-color: transparent;
+  }
+  .mnav-btn.active {
+    color: white;
+    background: linear-gradient(135deg, rgba(59, 130, 246, 0.4), rgba(139, 92, 246, 0.3));
+    border-color: rgba(96, 165, 250, 0.5);
+    box-shadow: 0 0 20px rgba(59, 130, 246, 0.3);
+  }
+  .mnav-btn:active { transform: scale(0.95); }
+
+  /* Scroll to top (mobile) */
+  .scroll-top {
+    position: fixed;
+    bottom: calc(88px + var(--safe-bottom)); right: 1rem;
+    width: 44px; height: 44px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+    color: white;
+    display: none; align-items: center; justify-content: center;
+    z-index: 49;
+    box-shadow: 0 10px 30px -5px rgba(59, 130, 246, 0.5);
+    border: none; cursor: pointer;
+    opacity: 0; pointer-events: none;
+    transition: opacity 0.3s;
+    -webkit-tap-highlight-color: transparent;
+  }
+  .scroll-top.show { opacity: 1; pointer-events: auto; }
+  @media (max-width: 1279px) { .scroll-top { display: flex; } }
+
+  /* iOS-specific adjustments */
+  @supports (-webkit-touch-callout: none) {
+    .glass { backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); }
+    input, textarea, select { font-size: 16px !important; }
+  }
+
+  /* Responsive typography — smoother on mobile */
+  @media (max-width: 640px) {
+    h1 { letter-spacing: -0.03em; }
+    .q-number { font-size: 3.5rem !important; }
+    .glass { border-radius: 1.25rem; }
+    .flash-card { height: 160px; }
+    body { font-size: 15px; line-height: 1.55; }
+  }
+
+  /* Touch target minimum */
+  a, button { min-height: 32px; }
+  .mobile-nav a, .mobile-nav button { min-height: 44px; min-width: 44px; }
+
+  /* Prevent horizontal overflow anywhere */
+  * { max-width: 100%; }
+  .overflow-x-auto { -webkit-overflow-scrolling: touch; }
+
+  /* Safe area for hero */
+  header { padding-top: max(6rem, calc(6rem + var(--safe-top))); }
+
+  /* Hero entrance animation */
+  @keyframes rise {
+    from { opacity: 0; transform: translateY(24px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  @keyframes fade {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+  .hero-rise > * { opacity: 0; animation: rise 0.8s cubic-bezier(0.22, 1, 0.36, 1) forwards; }
+  .hero-rise > *:nth-child(1) { animation-delay: 0.05s; }
+  .hero-rise > *:nth-child(2) { animation-delay: 0.15s; }
+  .hero-rise > *:nth-child(3) { animation-delay: 0.3s; }
+  .hero-rise > *:nth-child(4) { animation-delay: 0.45s; }
+  .hero-rise > *:nth-child(5) { animation-delay: 0.6s; }
+  @media (prefers-reduced-motion: reduce) {
+    .hero-rise > * { animation: none; opacity: 1; }
+  }
+
+  /* Mark as learned button */
+  .learn-btn {
+    display: inline-flex; align-items: center; gap: 0.5rem;
+    padding: 0.55rem 1rem;
+    border-radius: 9999px;
+    font-size: 0.8rem; font-weight: 600;
+    font-family: ui-monospace, 'SF Mono', Menlo, monospace;
+    background: rgba(15, 23, 42, 0.6);
+    border: 1px solid rgba(148, 163, 184, 0.2);
+    color: #94a3b8;
+    cursor: pointer;
+    transition: all 0.25s;
+    -webkit-tap-highlight-color: transparent;
+    user-select: none;
+  }
+  .learn-btn:hover { border-color: rgba(96, 165, 250, 0.5); color: #cbd5e1; }
+  .learn-btn:active { transform: scale(0.97); }
+  .learn-btn .check-icon {
+    width: 16px; height: 16px;
+    border-radius: 50%;
+    border: 1.5px solid currentColor;
+    display: inline-flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+    transition: all 0.25s;
+  }
+  .learn-btn.learned {
+    background: linear-gradient(135deg, rgba(34, 197, 94, 0.15), rgba(16, 185, 129, 0.1));
+    border-color: rgba(52, 211, 153, 0.5);
+    color: #6ee7b7;
+  }
+  .learn-btn.learned .check-icon {
+    background: #34d399; border-color: #34d399; color: #022c22;
+  }
+  .learn-btn.learned .check-icon::before {
+    content: '✓'; font-weight: 900; font-size: 11px;
+  }
+
+  /* Progress chip — floating */
+  .progress-chip {
+    position: fixed;
+    top: calc(1rem + var(--safe-top));
+    right: 1rem;
+    z-index: 40;
+    padding: 0.5rem 0.85rem;
+    border-radius: 9999px;
+    font-family: ui-monospace, 'SF Mono', Menlo, monospace;
+    font-size: 0.75rem; font-weight: 700;
+    background: linear-gradient(135deg, rgba(30, 41, 59, 0.8), rgba(15, 23, 42, 0.6));
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(148, 163, 184, 0.2);
+    color: #cbd5e1;
+    display: inline-flex; align-items: center; gap: 0.5rem;
+    box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5);
+  }
+  .progress-chip .count-num { color: #6ee7b7; }
+  .progress-bar-mini {
+    width: 42px; height: 5px;
+    background: rgba(148, 163, 184, 0.2);
+    border-radius: 9999px;
+    overflow: hidden;
+  }
+  .progress-bar-mini-fill {
+    height: 100%;
+    background: linear-gradient(90deg, #22d3ee, #34d399);
+    border-radius: 9999px;
+    width: 0%;
+    transition: width 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  /* Section ring — learned state */
+  section.learned .q-number {
+    background: linear-gradient(135deg, #34d399, #22d3ee);
+    -webkit-background-clip: text;
+    background-clip: text;
+  }
+  section.learned > div > div:first-child > .accent-line {
+    background: linear-gradient(90deg, #34d399, transparent);
+  }
+
+  /* Keyboard shortcut hint */
+  .kbd-hint {
+    position: fixed;
+    bottom: calc(1rem + var(--safe-bottom));
+    left: 50%; transform: translateX(-50%);
+    z-index: 45;
+    padding: 0.5rem 1rem;
+    background: rgba(2, 6, 23, 0.9);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(96, 165, 250, 0.3);
+    border-radius: 9999px;
+    font-family: ui-monospace, 'SF Mono', Menlo, monospace;
+    font-size: 0.7rem; color: #93c5fd;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s;
+  }
+  .kbd-hint.show { opacity: 1; }
+  @media (max-width: 1279px) { .kbd-hint { display: none; } }
+  kbd.key {
+    display: inline-block;
+    padding: 0.1rem 0.35rem;
+    margin: 0 0.15rem;
+    background: rgba(59, 130, 246, 0.15);
+    border: 1px solid rgba(96, 165, 250, 0.4);
+    border-radius: 4px;
+    font-size: 0.65rem;
+    font-family: inherit;
+  }
+</style>
+</head>
+<body>
+
+<div class="progress-bar" id="progressBar"></div>
+<div class="mesh-bg"></div>
+<div class="orb orb-1"></div>
+<div class="orb orb-2"></div>
+<div class="orb orb-3"></div>
+
+<!-- Side nav (desktop) -->
+<nav class="hidden xl:flex fixed left-6 top-1/2 -translate-y-1/2 z-30 flex-col gap-1">
+  <a class="nav-link" href="#q1">01 / NATO def.</a>
+  <a class="nav-link" href="#q2">02 / Warstwa logiczna</a>
+  <a class="nav-link" href="#q3">03 / Działania OCO</a>
+  <a class="nav-link" href="#q4">04 / Stuxnet</a>
+  <a class="nav-link" href="#q5">05 / Szpiegostwo vs terror</a>
+  <a class="nav-link" href="#q6">06 / Wrzesień 2007</a>
+  <a class="nav-link" href="#q7">07 / Cyberterroryzm</a>
+  <a class="nav-link" href="#q8">08 / Strategia 2026</a>
+  <a class="nav-link" href="#q9">09 / CSIRT-y</a>
+  <a class="nav-link" href="#q10">10 / Atrybucja</a>
+  <div class="mt-2 pt-2 border-t border-slate-700/50"><a class="nav-link" href="#flash">★ Powtórka</a></div>
+</nav>
+
+<!-- Mobile bottom nav -->
+<nav class="mobile-nav" aria-label="Nawigacja mobilna">
+  <div class="mobile-nav-inner">
+    <a class="mnav-btn" href="#top" data-target="top" aria-label="Góra">↑</a>
+    <a class="mnav-btn" href="#q1" data-target="q1">01</a>
+    <a class="mnav-btn" href="#q2" data-target="q2">02</a>
+    <a class="mnav-btn" href="#q3" data-target="q3">03</a>
+    <a class="mnav-btn" href="#q4" data-target="q4">04</a>
+    <a class="mnav-btn" href="#q5" data-target="q5">05</a>
+    <a class="mnav-btn" href="#q6" data-target="q6">06</a>
+    <a class="mnav-btn" href="#q7" data-target="q7">07</a>
+    <a class="mnav-btn" href="#q8" data-target="q8">08</a>
+    <a class="mnav-btn" href="#q9" data-target="q9">09</a>
+    <a class="mnav-btn" href="#q10" data-target="q10">10</a>
+    <a class="mnav-btn" href="#flash" data-target="flash">★</a>
+  </div>
+</nav>
+
+<button class="scroll-top" id="scrollTop" aria-label="Wróć na górę">
+  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
+</button>
+
+<!-- Progress chip (hidden until user marks first question) -->
+<div class="progress-chip" id="progressChip" style="display:none">
+  <span><span class="count-num" id="countNum">0</span><span class="text-slate-500">/10</span></span>
+  <div class="progress-bar-mini"><div class="progress-bar-mini-fill" id="progressFill"></div></div>
+  <button id="resetProgress" class="text-slate-500 hover:text-rose-300 transition text-[10px]" style="background:none;border:none;cursor:pointer;padding:0 0 0 0.25rem" aria-label="Zresetuj postęp" title="Zresetuj postęp">✕</button>
+</div>
+
+<!-- Keyboard shortcut hint (desktop, shows briefly on load) -->
+<div class="kbd-hint" id="kbdHint"><kbd class="key">←</kbd><kbd class="key">→</kbd> nawigacja · <kbd class="key">L</kbd> oznacz jako opanowane</div>
+
+<span id="top"></span>
+<!-- HERO -->
+<header class="relative min-h-screen flex items-center justify-center px-6 py-24 grid-pattern hero-glow overflow-hidden">
+  <div class="absolute top-8 left-1/2 -translate-x-1/2 flex items-center gap-2">
+    <span class="glow-dot"></span>
+    <span class="text-xs font-mono tracking-[0.3em] uppercase text-slate-400">Egzamin • Semestr letni 2026</span>
+  </div>
+
+  <div class="max-w-5xl mx-auto text-center hero-rise">
+    <div class="inline-flex items-center gap-2 px-4 py-1.5 mb-8 rounded-full border border-blue-400/30 bg-blue-500/10 shimmer">
+      <span class="text-xs font-mono tracking-widest text-blue-300">CYBER.SEC // PL.EDU</span>
+    </div>
+
+    <h1 class="font-black leading-[1.02] sm:leading-[0.9] tracking-tight mb-6 sm:mb-8" style="font-size: clamp(2rem, 8.5vw, 9rem); letter-spacing: -0.03em;">
+      <span class="block gradient-text" lang="pl" style="hyphens: auto; -webkit-hyphens: auto;">Cyberbezpieczeństwo</span>
+      <span class="block text-slate-300 font-light italic mt-2 sm:mt-4" style="font-size: clamp(1.5rem, 6vw, 6rem);">i cyberwojna</span>
+    </h1>
+
+    <p class="max-w-2xl mx-auto text-base sm:text-lg md:text-xl text-slate-400 mb-10 sm:mb-12 leading-relaxed px-2">
+      Dziesięć pytań, dziesięć odpowiedzi. Notatki z wykładów, literatura przedmiotu,
+      doktryna NATO i prawo polskie.
+      <span class="gradient-text-cyan font-medium">Wszystko, czego potrzebujesz, w jednym miejscu.</span>
+    </p>
+
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-3xl mx-auto">
+      <div class="glass rounded-2xl p-5">
+        <div class="stat-num gradient-text-blue">10</div>
+        <div class="text-xs font-mono uppercase tracking-widest text-slate-500 mt-2">pytania</div>
+      </div>
+      <div class="glass rounded-2xl p-5">
+        <div class="stat-num gradient-text-blue">3</div>
+        <div class="text-xs font-mono uppercase tracking-widest text-slate-500 mt-2">warstwy NATO</div>
+      </div>
+      <div class="glass rounded-2xl p-5">
+        <div class="stat-num gradient-text-blue">3</div>
+        <div class="text-xs font-mono uppercase tracking-widest text-slate-500 mt-2">CSIRT-y PL</div>
+      </div>
+      <div class="glass rounded-2xl p-5">
+        <div class="stat-num gradient-text-blue">2016</div>
+        <div class="text-xs font-mono uppercase tracking-widest text-slate-500 mt-2">szczyt Warszawa</div>
+      </div>
+    </div>
+
+    <div class="mt-16 flex flex-col items-center">
+      <a href="#q1" class="group relative inline-flex items-center gap-3 px-8 py-4 rounded-full bg-gradient-to-r from-blue-600 to-cyan-500 text-white font-semibold shadow-[0_10px_40px_-10px_rgba(37,99,235,0.8)] hover:shadow-[0_20px_60px_-10px_rgba(37,99,235,1)] hover:scale-105 transition-all">
+        Zaczynamy
+        <svg class="w-5 h-5 group-hover:translate-x-1 transition" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+      </a>
+    </div>
+  </div>
+</header>
+
+<!-- MAIN -->
+<main class="max-w-6xl mx-auto px-6 py-24 space-y-32">
+
+<!-- Q1 -->
+<section id="q1" class="reveal">
+  <div class="flex flex-col lg:flex-row gap-10">
+    <div class="lg:w-1/3 lg:sticky lg:top-24 lg:self-start">
+      <div class="q-number">01</div>
+      <div class="accent-line my-4"></div>
+      <div class="tag">NATO • AJP-3.20</div>
+      <h2 class="text-3xl lg:text-4xl font-bold mt-5 mb-3 text-white leading-tight">Definicja cyberprzestrzeni</h2>
+      <p class="text-slate-400 text-sm leading-relaxed">„…które przetwarzają, przechowują lub przesyłają dane."</p>
+    </div>
+    <div class="lg:w-2/3 space-y-6">
+      <div class="glass rounded-3xl p-8">
+        <div class="text-xs font-mono uppercase tracking-widest text-blue-300 mb-3">Pytanie</div>
+        <p class="text-lg text-slate-200 mb-6 italic">W ujęciu doktrynalnym NATO cyberprzestrzeń jest globalną domeną obejmującą wszystkie połączone systemy komunikacyjne, technologie informacyjne oraz inne systemy elektroniczne, sieci i ich dane, <span class="gradient-text-cyan not-italic font-semibold">które…</span></p>
+        <div class="callout">
+          <div class="text-xs font-mono uppercase tracking-widest text-blue-300 mb-2">Odpowiedź</div>
+          <p class="text-xl text-white leading-relaxed">…<span class="gradient-text font-bold">przetwarzają, przechowują lub przesyłają dane</span> — <span class="text-slate-300">w tym również te odseparowane lub niezależne.</span></p>
+        </div>
+      </div>
+      <div class="glass rounded-3xl p-8">
+        <div class="text-xs font-mono uppercase tracking-widest text-cyan-300 mb-4">Kluczowe atrybuty</div>
+        <ul class="space-y-3 text-slate-300">
+          <li class="flex gap-3"><span class="text-blue-400 font-bold font-mono">→</span> <span><strong class="text-white">Globalna domena operacyjna</strong> — równorzędna z lądem, morzem, powietrzem i przestrzenią kosmiczną.</span></li>
+          <li class="flex gap-3"><span class="text-blue-400 font-bold font-mono">→</span> <span>Uznana za domenę NATO na <strong class="text-white">szczycie w Warszawie w 2016 r.</strong></span></li>
+          <li class="flex gap-3"><span class="text-blue-400 font-bold font-mono">→</span> <span><strong class="text-white">100% wytworem człowieka</strong> — inaczej niż pozostałe domeny.</span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Q2 -->
+<section id="q2" class="reveal">
+  <div class="flex flex-col lg:flex-row gap-10">
+    <div class="lg:w-1/3 lg:sticky lg:top-24 lg:self-start">
+      <div class="q-number">02</div>
+      <div class="accent-line my-4"></div>
+      <div class="tag tag-cyan">3 warstwy</div>
+      <h2 class="text-3xl lg:text-4xl font-bold mt-5 mb-3 text-white leading-tight">Warstwa logiczna</h2>
+      <p class="text-slate-400 text-sm leading-relaxed">Kod, protokoły, dane — "jak" działa cyberprzestrzeń.</p>
+    </div>
+    <div class="lg:w-2/3 space-y-6">
+      <div class="glass rounded-3xl p-8">
+        <div class="text-xs font-mono uppercase tracking-widest text-blue-300 mb-3">Pytanie</div>
+        <p class="text-lg text-slate-200 italic">Warstwę logiczną cyberprzestrzeni – w ujęciu doktrynalnym NATO – tworzą przykładowo…</p>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-4">
+        <div class="glass rounded-2xl p-5 !border-slate-700/50">
+          <div class="text-xs font-mono text-slate-500 mb-2">LAYER 1</div>
+          <div class="font-bold text-white mb-1">Fizyczna</div>
+          <p class="text-xs text-slate-400 leading-relaxed">Hardware, serwery, routery, kable światłowodowe.</p>
+        </div>
+        <div class="glass rounded-2xl p-5 !border-blue-400/40" style="background: linear-gradient(135deg, rgba(59,130,246,0.2), rgba(139,92,246,0.1))">
+          <div class="text-xs font-mono text-blue-300 mb-2">LAYER 2 ←</div>
+          <div class="font-bold gradient-text mb-1">Logiczna</div>
+          <p class="text-xs text-slate-300 leading-relaxed">Kod, protokoły, aplikacje, dane.</p>
+        </div>
+        <div class="glass rounded-2xl p-5 !border-slate-700/50">
+          <div class="text-xs font-mono text-slate-500 mb-2">LAYER 3</div>
+          <div class="font-bold text-white mb-1">Tożsamości</div>
+          <p class="text-xs text-slate-400 leading-relaxed">Konta, persony, użytkownicy online.</p>
+        </div>
+      </div>
+
+      <div class="glass rounded-3xl p-8">
+        <div class="text-xs font-mono uppercase tracking-widest text-cyan-300 mb-4">Przykłady warstwy logicznej</div>
+        <div class="flex flex-wrap gap-2">
+          <span class="tag">TCP/IP</span>
+          <span class="tag">HTTP / HTTPS</span>
+          <span class="tag">DNS</span>
+          <span class="tag">BGP</span>
+          <span class="tag tag-cyan">Systemy operacyjne</span>
+          <span class="tag tag-cyan">Windows / Linux</span>
+          <span class="tag tag-violet">Oprogramowanie</span>
+          <span class="tag tag-violet">Aplikacje</span>
+          <span class="tag tag-violet">Bazy danych</span>
+          <span class="tag">Kod źródłowy</span>
+          <span class="tag">Adresy IP / URL</span>
+          <span class="tag">Tablice routingu</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Q3 -->
+<section id="q3" class="reveal">
+  <div class="flex flex-col lg:flex-row gap-10">
+    <div class="lg:w-1/3 lg:sticky lg:top-24 lg:self-start">
+      <div class="q-number">03</div>
+      <div class="accent-line my-4"></div>
+      <div class="tag tag-rose">OCO</div>
+      <h2 class="text-3xl lg:text-4xl font-bold mt-5 mb-3 text-white leading-tight">Działania ofensywne</h2>
+      <p class="text-slate-400 text-sm leading-relaxed">Projekcja siły w cyberprzestrzeni.</p>
+    </div>
+    <div class="lg:w-2/3 space-y-6">
+      <div class="glass rounded-3xl p-8">
+        <div class="text-xs font-mono uppercase tracking-widest text-blue-300 mb-3">Pytanie</div>
+        <p class="text-lg text-slate-200 italic mb-6">Ofensywne działania w cyberprzestrzeni polegają na…</p>
+        <div class="callout">
+          <p class="text-xl text-white leading-relaxed">…<span class="gradient-text font-semibold">projekcji siły w cyberprzestrzeni lub za jej pośrednictwem</span> w celu wywołania efektów służących realizacji celów wojskowych lub politycznych.</p>
+        </div>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-4">
+        <div class="glass rounded-2xl p-6">
+          <div class="flex items-center gap-2 mb-3">
+            <div class="w-2 h-2 rounded-full bg-rose-400"></div>
+            <span class="text-xs font-mono uppercase tracking-widest text-rose-300">OCO</span>
+          </div>
+          <div class="font-bold text-white mb-2">Offensive</div>
+          <p class="text-sm text-slate-400">Projekcja siły — efekty u przeciwnika: zakłócenie, uszkodzenie, zniszczenie.</p>
+        </div>
+        <div class="glass rounded-2xl p-6">
+          <div class="flex items-center gap-2 mb-3">
+            <div class="w-2 h-2 rounded-full bg-emerald-400"></div>
+            <span class="text-xs font-mono uppercase tracking-widest text-emerald-300">DCO</span>
+          </div>
+          <div class="font-bold text-white mb-2">Defensive</div>
+          <p class="text-sm text-slate-400">Zachowanie swobody działania sił własnych w cyberprzestrzeni.</p>
+        </div>
+      </div>
+
+      <div class="glass rounded-3xl p-8">
+        <div class="text-xs font-mono uppercase tracking-widest text-cyan-300 mb-4">Typowe formy działań ofensywnych</div>
+        <div class="grid md:grid-cols-2 gap-3 text-sm text-slate-300">
+          <div class="flex gap-3"><span class="text-blue-400 font-mono">01</span> Ataki DDoS (zakłócenie dostępności)</div>
+          <div class="flex gap-3"><span class="text-blue-400 font-mono">02</span> Exploit i eskalacja uprawnień</div>
+          <div class="flex gap-3"><span class="text-blue-400 font-mono">03</span> Wipery, ransomware, modyfikacja danych</div>
+          <div class="flex gap-3"><span class="text-blue-400 font-mono">04</span> Website defacement</div>
+          <div class="flex gap-3"><span class="text-blue-400 font-mono">05</span> Ataki na infrastrukturę krytyczną (Stuxnet)</div>
+          <div class="flex gap-3"><span class="text-blue-400 font-mono">06</span> Wsparcie operacji kinetycznych (Gruzja 2008)</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Q4 -->
+<section id="q4" class="reveal">
+  <div class="flex flex-col lg:flex-row gap-10">
+    <div class="lg:w-1/3 lg:sticky lg:top-24 lg:self-start">
+      <div class="q-number">04</div>
+      <div class="accent-line my-4"></div>
+      <div class="tag tag-violet">Olympic Games</div>
+      <h2 class="text-3xl lg:text-4xl font-bold mt-5 mb-3 text-white leading-tight">Stuxnet</h2>
+      <p class="text-slate-400 text-sm leading-relaxed">Pierwsza znana cyberbroń z fizycznym efektem kinetycznym.</p>
+    </div>
+    <div class="lg:w-2/3 space-y-6">
+      <div class="glass rounded-3xl p-8">
+        <div class="text-xs font-mono uppercase tracking-widest text-blue-300 mb-3">Pytanie</div>
+        <p class="text-lg text-slate-200 italic mb-6">Kogo najczęściej wskazuje się jako twórców wirusa Stuxnet?</p>
+        <div class="callout">
+          <div class="flex items-center gap-6 flex-wrap">
+            <div>
+              <div class="text-5xl font-black gradient-text">USA</div>
+              <div class="text-xs font-mono text-slate-500 mt-1">NSA / CIA</div>
+            </div>
+            <div class="text-3xl text-slate-600 font-light">+</div>
+            <div>
+              <div class="text-5xl font-black gradient-text">IZRAEL</div>
+              <div class="text-xs font-mono text-slate-500 mt-1">Unit 8200</div>
+            </div>
+          </div>
+          <p class="text-slate-300 mt-4 text-sm">Wspólna operacja wywiadowcza pod kryptonimem <span class="font-mono text-cyan-300">"Olympic Games"</span> — ujawniona m.in. w materiałach Davida Sangera (<em>NYT</em>, 2012).</p>
+        </div>
+      </div>
+
+      <div class="glass rounded-3xl p-8">
+        <div class="text-xs font-mono uppercase tracking-widest text-cyan-300 mb-5">Kontekst</div>
+        <div class="space-y-4">
+          <div class="flex gap-4 items-start">
+            <div class="text-2xl font-mono text-blue-400">2010</div>
+            <div class="flex-1 pt-1 text-slate-300">Publiczne odkrycie wirusa w systemach przemysłowych.</div>
+          </div>
+          <div class="flex gap-4 items-start">
+            <div class="text-xs font-mono text-blue-400 pt-2">CEL</div>
+            <div class="flex-1 text-slate-300">Iran — zakład wzbogacania uranu w <strong class="text-white">Natanz</strong>.</div>
+          </div>
+          <div class="flex gap-4 items-start">
+            <div class="text-xs font-mono text-blue-400 pt-2">VECTOR</div>
+            <div class="flex-1 text-slate-300">Sterowniki PLC <strong class="text-white">Siemens S7-300/400</strong>, obsługujące wirówki <strong>IR-1</strong>.</div>
+          </div>
+          <div class="flex gap-4 items-start">
+            <div class="text-xs font-mono text-blue-400 pt-2">EFEKT</div>
+            <div class="flex-1 text-slate-300">Uszkadzanie wirówek przez manipulację prędkością, operatorom wyświetlano fałszywe odczyty.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Q5 -->
+<section id="q5" class="reveal">
+  <div class="flex flex-col lg:flex-row gap-10">
+    <div class="lg:w-1/3 lg:sticky lg:top-24 lg:self-start">
+      <div class="q-number">05</div>
+      <div class="accent-line my-4"></div>
+      <div class="tag">Porównanie</div>
+      <h2 class="text-3xl lg:text-4xl font-bold mt-5 mb-3 text-white leading-tight">Szpiegostwo vs terror</h2>
+      <p class="text-slate-400 text-sm leading-relaxed">Ciche vs głośne. Informacja vs zastraszenie.</p>
+    </div>
+    <div class="lg:w-2/3 space-y-6">
+      <div class="glass rounded-3xl p-8">
+        <div class="text-xs font-mono uppercase tracking-widest text-blue-300 mb-3">Pytanie</div>
+        <p class="text-lg text-slate-200 italic">Co odróżnia cyberszpiegostwo od cyberterroryzmu?</p>
+      </div>
+
+      <div class="glass rounded-3xl p-4 md:p-6 table-wrap">
+        <div class="md:hidden text-[10px] font-mono uppercase tracking-widest text-slate-500 mb-2 flex items-center gap-2">
+          <span>przesuń w bok</span>
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+        </div>
+        <table class="cmp-table min-w-[600px]">
+          <thead>
+            <tr>
+              <th>Kryterium</th>
+              <th><span class="gradient-text-cyan">Cyberszpiegostwo</span></th>
+              <th><span class="gradient-text font-semibold">Cyberterroryzm</span></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td class="font-medium text-slate-400">Cel</td><td>informacje niejawne</td><td>zniszczenie, zastraszenie</td></tr>
+            <tr><td class="font-medium text-slate-400">Skutek</td><td>ciche, niewykryte</td><td>głośny efekt polityczny</td></tr>
+            <tr><td class="font-medium text-slate-400">Motywacja</td><td>wywiadowcza / ekonomiczna</td><td>polityczna / ideologiczna</td></tr>
+            <tr><td class="font-medium text-slate-400">Widoczność</td><td>niska — ukrywa ślady</td><td>wysoka — rozgłos jest celem</td></tr>
+            <tr><td class="font-medium text-slate-400">Sprawcy</td><td>państwa / APT</td><td>grupy terrorystyczne</td></tr>
+            <tr><td class="font-medium text-slate-400">Przykłady</td><td class="text-xs font-mono">Titan Rain '03, GhostNet '09, Jednostka 61398</td><td class="text-xs font-mono">ISIS online (propaganda, rekrutacja)</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="glass rounded-3xl p-8">
+        <div class="text-xs font-mono uppercase tracking-widest text-cyan-300 mb-3">Esencja różnicy</div>
+        <p class="text-slate-200 leading-relaxed">Cyberszpiegostwo jest <strong class="text-cyan-300">informacyjne i ukryte</strong> — nie chce być zauważone. Cyberterroryzm jest <strong class="gradient-text">demonstracyjny</strong> — istnieje tylko wtedy, gdy jest widoczny i wywołuje strach.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Q6 -->
+<section id="q6" class="reveal">
+  <div class="flex flex-col lg:flex-row gap-10">
+    <div class="lg:w-1/3 lg:sticky lg:top-24 lg:self-start">
+      <div class="q-number">06</div>
+      <div class="accent-line my-4"></div>
+      <div class="tag tag-rose">Operacja Orchard</div>
+      <h2 class="text-3xl lg:text-4xl font-bold mt-5 mb-3 text-white leading-tight">Wrzesień 2007</h2>
+      <p class="text-slate-400 text-sm leading-relaxed">Cyber + kinetyka — pierwsza integracja.</p>
+    </div>
+    <div class="lg:w-2/3 space-y-6">
+      <div class="glass rounded-3xl p-8">
+        <div class="text-xs font-mono uppercase tracking-widest text-blue-300 mb-3">Pytanie</div>
+        <p class="text-lg text-slate-200 italic mb-6">We wrześniu 2007 roku…</p>
+        <div class="callout">
+          <p class="text-xl text-white leading-relaxed">…izraelskie lotnictwo przeprowadziło <span class="gradient-text font-bold">Operację Orchard</span> (<em>Outside the Box</em>), bombardując syryjski obiekt <strong>Al-Kibar</strong> — podejrzewany reaktor jądrowy. Atak był poprzedzony <strong class="gradient-text-cyan">cyberoperacją</strong> neutralizującą syryjską obronę przeciwlotniczą.</p>
+        </div>
+      </div>
+
+      <div class="glass rounded-3xl p-8">
+        <div class="text-xs font-mono uppercase tracking-widest text-cyan-300 mb-5">Timeline</div>
+        <div class="relative pl-6">
+          <div class="absolute left-2 top-2 bottom-2 w-0.5 bg-gradient-to-b from-blue-500 via-purple-500 to-cyan-400"></div>
+          <div class="space-y-6">
+            <div class="relative">
+              <div class="absolute -left-[20px] top-1.5 w-3 h-3 rounded-full bg-blue-500 ring-4 ring-blue-500/30"></div>
+              <div class="font-mono text-xs text-blue-300 mb-1">6 WRZ 2007</div>
+              <div class="font-bold text-white">Operacja Orchard</div>
+              <p class="text-sm text-slate-400">Izrael → Syria (Al-Kibar). Cyber-enabled airstrike.</p>
+            </div>
+            <div class="relative">
+              <div class="absolute -left-[20px] top-1.5 w-3 h-3 rounded-full bg-purple-500 ring-4 ring-purple-500/30"></div>
+              <div class="font-mono text-xs text-purple-300 mb-1">SIE 2008</div>
+              <div class="font-bold text-white">Gruzja 2008</div>
+              <p class="text-sm text-slate-400">Zsynchronizowany cyber + ląd + morze + powietrze.</p>
+            </div>
+            <div class="relative">
+              <div class="absolute -left-[20px] top-1.5 w-3 h-3 rounded-full bg-cyan-400 ring-4 ring-cyan-400/30"></div>
+              <div class="font-mono text-xs text-cyan-300 mb-1">2010</div>
+              <div class="font-bold text-white">Ujawnienie Stuxnet</div>
+              <p class="text-sm text-slate-400">Kaskada kolejnych operacji cyber–kinetycznych.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="glass rounded-3xl p-6 border border-amber-400/20" style="background: linear-gradient(135deg, rgba(251, 191, 36, 0.08), rgba(30, 41, 59, 0.4))">
+        <div class="text-xs font-mono uppercase tracking-widest text-amber-300 mb-2">⚑ Alternatywna odpowiedź</div>
+        <p class="text-sm text-slate-300">Jeśli wykładowca miał na myśli inne wydarzenie: ujawnienie wielkoskalowego chińskiego cyberszpiegostwa wobec Pentagonu (<span class="font-mono text-slate-400">Byzantine Hades</span>) — wówczas wyłączono m.in. pocztę sekretarza obrony R. Gatesa.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Q7 -->
+<section id="q7" class="reveal">
+  <div class="flex flex-col lg:flex-row gap-10">
+    <div class="lg:w-1/3 lg:sticky lg:top-24 lg:self-start">
+      <div class="q-number">07</div>
+      <div class="accent-line my-4"></div>
+      <div class="tag tag-rose">Definicja klasyczna</div>
+      <h2 class="text-3xl lg:text-4xl font-bold mt-5 mb-3 text-white leading-tight">Cyberterroryzm</h2>
+      <p class="text-slate-400 text-sm leading-relaxed">Polityczny. Widowiskowy. Niepaństwowy.</p>
+    </div>
+    <div class="lg:w-2/3 space-y-6">
+      <div class="glass rounded-3xl p-8">
+        <div class="text-xs font-mono uppercase tracking-widest text-blue-300 mb-3">Pytanie</div>
+        <p class="text-lg text-slate-200 italic">Wskaż typowe cechy cyberterroryzmu.</p>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-4">
+        <div class="glass rounded-2xl p-6">
+          <div class="text-xs font-mono text-blue-300 mb-2">01 / MOTYWACJA</div>
+          <div class="font-bold text-white mb-1">Polityczna i ideologiczna</div>
+          <p class="text-xs text-slate-400">Religijna, separatystyczna — nie finansowa.</p>
+        </div>
+        <div class="glass rounded-2xl p-6">
+          <div class="text-xs font-mono text-blue-300 mb-2">02 / CEL</div>
+          <div class="font-bold text-white mb-1">Zastraszenie / wymuszenie</div>
+          <p class="text-xs text-slate-400">Na państwie lub społeczeństwie.</p>
+        </div>
+        <div class="glass rounded-2xl p-6">
+          <div class="text-xs font-mono text-blue-300 mb-2">03 / EFEKT</div>
+          <div class="font-bold text-white mb-1">Widowiskowy rozgłos</div>
+          <p class="text-xs text-slate-400">Sprawca chce być rozpoznany — inaczej niż szpieg.</p>
+        </div>
+        <div class="glass rounded-2xl p-6">
+          <div class="text-xs font-mono text-blue-300 mb-2">04 / SPRAWCY</div>
+          <div class="font-bold text-white mb-1">Niepaństwowi</div>
+          <p class="text-xs text-slate-400">Grupy terrorystyczne, ruchy zbrojne.</p>
+        </div>
+        <div class="glass rounded-2xl p-6">
+          <div class="text-xs font-mono text-blue-300 mb-2">05 / CELE ATAKU</div>
+          <div class="font-bold text-white mb-1">Infrastruktura krytyczna</div>
+          <p class="text-xs text-slate-400">Energetyka, transport, łączność, systemy rządowe.</p>
+        </div>
+        <div class="glass rounded-2xl p-6">
+          <div class="text-xs font-mono text-blue-300 mb-2">06 / SKUTKI</div>
+          <div class="font-bold text-white mb-1">Szkoda + panika</div>
+          <p class="text-xs text-slate-400">Efekt fizyczny + psychologiczny (utrata zaufania).</p>
+        </div>
+        <div class="glass rounded-2xl p-6">
+          <div class="text-xs font-mono text-blue-300 mb-2">07 / NARZĘDZIA</div>
+          <div class="font-bold text-white mb-1">ICT + internet</div>
+          <p class="text-xs text-slate-400">Propaganda, rekrutacja, finansowanie (szerokie ujęcie).</p>
+        </div>
+        <div class="glass rounded-2xl p-6">
+          <div class="text-xs font-mono text-blue-300 mb-2">08 / ASYMETRIA</div>
+          <div class="font-bold text-white mb-1">Mała grupa vs państwo</div>
+          <p class="text-xs text-slate-400">Drobny aktor może zagrozić systemowi państwowemu.</p>
+        </div>
+      </div>
+
+      <div class="glass rounded-3xl p-8">
+        <div class="text-xs font-mono uppercase tracking-widest text-cyan-300 mb-3">Definicja klasyczna</div>
+        <blockquote class="callout italic text-slate-300 leading-relaxed">
+          „Politycznie motywowany atak lub groźba ataku na komputery, sieci lub systemy informacyjne w celu zniszczenia infrastruktury oraz zastraszania lub wymuszenia na rządzie i ludziach daleko idących politycznych i społecznych celów."
+          <footer class="text-xs text-slate-500 mt-3 not-italic">— klasyczna definicja doktrynalna</footer>
+        </blockquote>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Q8 -->
+<section id="q8" class="reveal">
+  <div class="flex flex-col lg:flex-row gap-10">
+    <div class="lg:w-1/3 lg:sticky lg:top-24 lg:self-start">
+      <div class="q-number">08</div>
+      <div class="accent-line my-4"></div>
+      <div class="tag tag-cyan">Marzec 2026</div>
+      <h2 class="text-3xl lg:text-4xl font-bold mt-5 mb-3 text-white leading-tight">Strategia 2026</h2>
+      <p class="text-slate-400 text-sm leading-relaxed">Nowa ramka operacyjna KSC.</p>
+    </div>
+    <div class="lg:w-2/3 space-y-6">
+      <div class="glass rounded-3xl p-8">
+        <div class="text-xs font-mono uppercase tracking-widest text-blue-300 mb-3">Pytanie</div>
+        <p class="text-lg text-slate-200 italic mb-6">W marcu 2026 r. w Polsce przyjęto nową…</p>
+        <div class="callout">
+          <p class="text-2xl text-white leading-relaxed">…<span class="gradient-text font-bold">Strategię Cyberbezpieczeństwa Rzeczypospolitej Polskiej</span></p>
+          <p class="text-sm font-mono text-slate-400 mt-3">Uchwała Rady Ministrów z dnia 10 marca 2026 r.</p>
+        </div>
+      </div>
+
+      <div class="glass rounded-3xl p-8">
+        <div class="text-xs font-mono uppercase tracking-widest text-cyan-300 mb-4">Kontekst prawny</div>
+        <div class="space-y-3">
+          <div class="flex gap-4 items-start">
+            <div class="text-xs font-mono text-blue-400 pt-0.5 whitespace-nowrap">5 VII 2018</div>
+            <div class="text-slate-300">Ustawa o krajowym systemie cyberbezpieczeństwa (KSC)</div>
+          </div>
+          <div class="flex gap-4 items-start">
+            <div class="text-xs font-mono text-blue-400 pt-0.5 whitespace-nowrap">I 2026</div>
+            <div class="text-slate-300">Nowelizacja ustawy o KSC</div>
+          </div>
+          <div class="flex gap-4 items-start">
+            <div class="text-xs font-mono text-cyan-300 pt-0.5 whitespace-nowrap">10 III 2026</div>
+            <div class="text-white font-semibold">Strategia Cyberbezpieczeństwa RP ← <span class="text-blue-400">tu jesteśmy</span></div>
+          </div>
+        </div>
+        <p class="mt-6 text-sm text-slate-400 leading-relaxed">Dokument wyznacza <strong class="text-slate-200">kierunki działań państwa</strong>, koordynację CSIRT, zadania dla sektora publicznego i prywatnego, priorytety inwestycyjne oraz współpracę międzynarodową (<span class="font-mono">ENISA, NATO Locked Shields, Cyber Coalition</span>).</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Q9 -->
+<section id="q9" class="reveal">
+  <div class="flex flex-col lg:flex-row gap-10">
+    <div class="lg:w-1/3 lg:sticky lg:top-24 lg:self-start">
+      <div class="q-number">09</div>
+      <div class="accent-line my-4"></div>
+      <div class="tag">Ustawa o KSC</div>
+      <h2 class="text-3xl lg:text-4xl font-bold mt-5 mb-3 text-white leading-tight">Trzy CSIRT-y</h2>
+      <p class="text-slate-400 text-sm leading-relaxed">Rdzeń operacyjny polskiego systemu.</p>
+    </div>
+    <div class="lg:w-2/3 space-y-6">
+      <div class="glass rounded-3xl p-8">
+        <div class="text-xs font-mono uppercase tracking-widest text-blue-300 mb-3">Pytanie</div>
+        <p class="text-lg text-slate-200 italic mb-6">CSIRT NASK, CSIRT GOV i CSIRT MON stanowią…</p>
+        <div class="callout">
+          <p class="text-lg text-white leading-relaxed">…<span class="gradient-text font-semibold">trzy krajowe zespoły reagowania na incydenty bezpieczeństwa komputerowego</span> (CSIRT poziomu krajowego) wskazane w Ustawie o krajowym systemie cyberbezpieczeństwa z 5 lipca 2018 r.</p>
+        </div>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-4">
+        <div class="glass rounded-2xl p-6 !border-blue-400/30">
+          <div class="text-3xl font-black gradient-text-blue mb-1 font-mono">GOV</div>
+          <div class="text-sm font-bold text-white mb-2">Administracja rządowa</div>
+          <p class="text-xs text-slate-400 leading-relaxed mb-3">Koordynacja reagowania dla administracji rządowej i wskazanych podmiotów publicznych.</p>
+          <div class="pt-3 border-t border-slate-700/50">
+            <div class="text-[10px] font-mono uppercase tracking-widest text-slate-500 mb-1">Prowadzący</div>
+            <div class="text-sm font-semibold text-blue-300">Szef ABW</div>
+          </div>
+        </div>
+        <div class="glass rounded-2xl p-6 !border-cyan-400/30">
+          <div class="text-3xl font-black gradient-text-cyan mb-1 font-mono">NASK</div>
+          <div class="text-sm font-bold text-white mb-2">Sektor cywilny</div>
+          <p class="text-xs text-slate-400 leading-relaxed mb-3">Obywatele, samorząd, usługi kluczowe poza rządem i wojskiem.</p>
+          <div class="pt-3 border-t border-slate-700/50">
+            <div class="text-[10px] font-mono uppercase tracking-widest text-slate-500 mb-1">Operator</div>
+            <div class="text-sm font-semibold text-cyan-300">NASK / CERT Polska</div>
+            <div class="text-[10px] font-mono text-slate-500 mt-0.5">od 1996</div>
+          </div>
+        </div>
+        <div class="glass rounded-2xl p-6" style="border-color: rgba(167, 139, 250, 0.3);">
+          <div class="text-3xl font-black gradient-text mb-1 font-mono">MON</div>
+          <div class="text-sm font-bold text-white mb-2">Obszar obronny</div>
+          <p class="text-xs text-slate-400 leading-relaxed mb-3">Wojsko, systemy obronne.</p>
+          <div class="pt-3 border-t border-slate-700/50">
+            <div class="text-[10px] font-mono uppercase tracking-widest text-slate-500 mb-1">Kluczowa rola</div>
+            <div class="text-sm font-semibold text-violet-300">WOC + DK WOC</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="glass rounded-3xl p-6">
+        <div class="text-xs font-mono uppercase tracking-widest text-cyan-300 mb-3">CSIRT-y sektorowe</div>
+        <div class="flex flex-wrap gap-2">
+          <span class="tag tag-cyan">CSIRT KNF</span>
+          <span class="tag tag-cyan">CSIRT CeZ</span>
+          <span class="text-xs text-slate-500 self-center ml-2">+ współpraca z ENISA i CSIRT UE/NATO</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Q10 -->
+<section id="q10" class="reveal">
+  <div class="flex flex-col lg:flex-row gap-10">
+    <div class="lg:w-1/3 lg:sticky lg:top-24 lg:self-start">
+      <div class="q-number">10</div>
+      <div class="accent-line my-4"></div>
+      <div class="tag tag-violet">Attribution</div>
+      <h2 class="text-3xl lg:text-4xl font-bold mt-5 mb-3 text-white leading-tight">Problem atrybucji</h2>
+      <p class="text-slate-400 text-sm leading-relaxed">Szara strefa konfliktu.</p>
+    </div>
+    <div class="lg:w-2/3 space-y-6">
+      <div class="glass rounded-3xl p-8">
+        <div class="text-xs font-mono uppercase tracking-widest text-blue-300 mb-3">Pytanie</div>
+        <p class="text-lg text-slate-200 italic mb-6">Trudności z jednoznacznym przypisaniem cyberataku konkretnemu sprawcy nazywa się…</p>
+        <div class="callout">
+          <p class="text-2xl text-white leading-relaxed">…<span class="gradient-text font-bold">problemem atrybucji</span> <span class="text-slate-400 text-lg font-mono">(cyber attribution)</span></p>
+        </div>
+      </div>
+
+      <div class="glass rounded-3xl p-8">
+        <div class="text-xs font-mono uppercase tracking-widest text-cyan-300 mb-5">Trzy poziomy atrybucji</div>
+        <div class="space-y-4">
+          <div class="relative p-5 rounded-2xl bg-gradient-to-r from-blue-500/10 to-transparent border border-blue-500/20">
+            <div class="flex items-center gap-3 mb-2">
+              <div class="w-8 h-8 rounded-lg bg-blue-500/20 border border-blue-400/30 flex items-center justify-center font-mono text-blue-300 font-bold text-sm">01</div>
+              <div class="font-bold text-white">Techniczna</div>
+            </div>
+            <p class="text-sm text-slate-400 pl-11">Kto fizycznie wykonał atak — IP, infrastruktura, próbki kodu.</p>
+          </div>
+          <div class="relative p-5 rounded-2xl bg-gradient-to-r from-purple-500/10 to-transparent border border-purple-500/20">
+            <div class="flex items-center gap-3 mb-2">
+              <div class="w-8 h-8 rounded-lg bg-purple-500/20 border border-purple-400/30 flex items-center justify-center font-mono text-purple-300 font-bold text-sm">02</div>
+              <div class="font-bold text-white">Organizacyjna</div>
+            </div>
+            <p class="text-sm text-slate-400 pl-11">Jaka grupa / jednostka — APT28, Lazarus, jednostka 61398.</p>
+          </div>
+          <div class="relative p-5 rounded-2xl bg-gradient-to-r from-cyan-500/10 to-transparent border border-cyan-500/20">
+            <div class="flex items-center gap-3 mb-2">
+              <div class="w-8 h-8 rounded-lg bg-cyan-500/20 border border-cyan-400/30 flex items-center justify-center font-mono text-cyan-300 font-bold text-sm">03</div>
+              <div class="font-bold text-white">Polityczna</div>
+            </div>
+            <p class="text-sm text-slate-400 pl-11">Jakie państwo zleciło lub sponsorowało operację.</p>
+          </div>
+        </div>
+        <p class="text-xs text-slate-500 mt-5 italic">↑ Im wyższy poziom, tym trudniej o pewność i tym większe polityczne konsekwencje błędu.</p>
+      </div>
+
+      <div class="glass rounded-3xl p-8">
+        <div class="text-xs font-mono uppercase tracking-widest text-cyan-300 mb-4">Dlaczego atrybucja jest trudna?</div>
+        <ul class="space-y-3 text-slate-300 text-sm">
+          <li class="flex gap-3"><span class="text-blue-400 font-mono">→</span> Ruch przez serwery pośredniczące (proxy, VPN, Tor), botnety, wiele jurysdykcji.</li>
+          <li class="flex gap-3"><span class="text-blue-400 font-mono">→</span> <strong class="text-white">False flag</strong> — podszywanie się pod innych aktorów.</li>
+          <li class="flex gap-3"><span class="text-blue-400 font-mono">→</span> Warstwy pośrednictwa między wykonawcą a zleceniodawcą (grupy półautonomiczne, najemnicy).</li>
+          <li class="flex gap-3"><span class="text-blue-400 font-mono">→</span> Brak jasnych norm prawa międzynarodowego.</li>
+          <li class="flex gap-3"><span class="text-blue-400 font-mono">→</span> Sprzyja <strong class="gradient-text">działaniom poniżej progu wojny</strong> (gray zone), utrudnia stosowanie art. 5 NATO.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FLASHCARDS -->
+<section id="flash" class="reveal">
+  <div class="text-center mb-12">
+    <div class="inline-flex items-center gap-2 mb-4 px-4 py-1.5 rounded-full border border-cyan-400/30 bg-cyan-500/10">
+      <span class="text-xs font-mono tracking-widest text-cyan-300">POWTÓRKA 30 SEKUND</span>
+    </div>
+    <h2 class="text-4xl md:text-6xl font-black gradient-text mb-4">Flashcards</h2>
+    <p class="text-slate-400">Kliknij kartę, żeby zobaczyć odpowiedź.</p>
+  </div>
+
+  <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
+    <div class="flash-card" onclick="this.classList.toggle('flipped')">
+      <div class="flash-inner">
+        <div class="flash-front">
+          <div class="text-xs font-mono text-blue-300 mb-2">01</div>
+          <div class="text-lg font-bold text-white">NATO — cyberprzestrzeń to…</div>
+          <div class="text-xs text-slate-500 mt-auto">→ kliknij</div>
+        </div>
+        <div class="flash-back">
+          <div class="text-sm text-white">Globalna domena, systemy które <strong class="gradient-text">przetwarzają, przechowują lub przesyłają dane</strong>. Uznana w Warszawie 2016.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="flash-card" onclick="this.classList.toggle('flipped')">
+      <div class="flash-inner">
+        <div class="flash-front">
+          <div class="text-xs font-mono text-blue-300 mb-2">02</div>
+          <div class="text-lg font-bold text-white">Warstwa logiczna — przykłady</div>
+          <div class="text-xs text-slate-500 mt-auto">→ kliknij</div>
+        </div>
+        <div class="flash-back">
+          <div class="text-sm text-white"><strong class="gradient-text">TCP/IP, HTTP, DNS</strong>, systemy operacyjne, aplikacje, kod, dane, adresy logiczne.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="flash-card" onclick="this.classList.toggle('flipped')">
+      <div class="flash-inner">
+        <div class="flash-front">
+          <div class="text-xs font-mono text-blue-300 mb-2">03</div>
+          <div class="text-lg font-bold text-white">OCO vs DCO</div>
+          <div class="text-xs text-slate-500 mt-auto">→ kliknij</div>
+        </div>
+        <div class="flash-back">
+          <div class="text-sm text-white">OCO = <strong class="gradient-text">projekcja siły</strong>. DCO = zachowanie swobody działania sił własnych.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="flash-card" onclick="this.classList.toggle('flipped')">
+      <div class="flash-inner">
+        <div class="flash-front">
+          <div class="text-xs font-mono text-blue-300 mb-2">04</div>
+          <div class="text-lg font-bold text-white">Stuxnet — autor?</div>
+          <div class="text-xs text-slate-500 mt-auto">→ kliknij</div>
+        </div>
+        <div class="flash-back">
+          <div class="text-sm text-white"><strong class="gradient-text">USA + Izrael</strong>. Operacja „Olympic Games". NSA + Unit 8200. Cel: Natanz, 2010.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="flash-card" onclick="this.classList.toggle('flipped')">
+      <div class="flash-inner">
+        <div class="flash-front">
+          <div class="text-xs font-mono text-blue-300 mb-2">05</div>
+          <div class="text-lg font-bold text-white">Szpiegostwo vs terror</div>
+          <div class="text-xs text-slate-500 mt-auto">→ kliknij</div>
+        </div>
+        <div class="flash-back">
+          <div class="text-sm text-white">Szpieg: <strong class="text-cyan-300">ciche</strong>, informacyjne, państwa. Terror: <strong class="gradient-text">głośne</strong>, polityczne, niepaństwowi.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="flash-card" onclick="this.classList.toggle('flipped')">
+      <div class="flash-inner">
+        <div class="flash-front">
+          <div class="text-xs font-mono text-blue-300 mb-2">06</div>
+          <div class="text-lg font-bold text-white">Wrzesień 2007</div>
+          <div class="text-xs text-slate-500 mt-auto">→ kliknij</div>
+        </div>
+        <div class="flash-back">
+          <div class="text-sm text-white"><strong class="gradient-text">Operacja Orchard</strong> — Izrael → Syria (Al-Kibar). Cyber + kinetyka.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="flash-card" onclick="this.classList.toggle('flipped')">
+      <div class="flash-inner">
+        <div class="flash-front">
+          <div class="text-xs font-mono text-blue-300 mb-2">07</div>
+          <div class="text-lg font-bold text-white">Cechy cyberterroryzmu</div>
+          <div class="text-xs text-slate-500 mt-auto">→ kliknij</div>
+        </div>
+        <div class="flash-back">
+          <div class="text-sm text-white"><strong class="gradient-text">Polityczna motywacja</strong> + zastraszenie + rozgłos + niepaństwowi + infrastruktura krytyczna.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="flash-card" onclick="this.classList.toggle('flipped')">
+      <div class="flash-inner">
+        <div class="flash-front">
+          <div class="text-xs font-mono text-blue-300 mb-2">08</div>
+          <div class="text-lg font-bold text-white">10 marca 2026</div>
+          <div class="text-xs text-slate-500 mt-auto">→ kliknij</div>
+        </div>
+        <div class="flash-back">
+          <div class="text-sm text-white"><strong class="gradient-text">Strategia Cyberbezpieczeństwa RP</strong> (uchwała RM).</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="flash-card" onclick="this.classList.toggle('flipped')">
+      <div class="flash-inner">
+        <div class="flash-front">
+          <div class="text-xs font-mono text-blue-300 mb-2">09</div>
+          <div class="text-lg font-bold text-white">CSIRT-y krajowe</div>
+          <div class="text-xs text-slate-500 mt-auto">→ kliknij</div>
+        </div>
+        <div class="flash-back">
+          <div class="text-sm text-white">Trzy zespoły z ustawy KSC (5 VII 2018): <strong class="gradient-text">GOV (ABW)</strong>, <strong class="gradient-text-cyan">NASK</strong>, <strong class="gradient-text">MON (WOC)</strong>.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="flash-card" onclick="this.classList.toggle('flipped')">
+      <div class="flash-inner">
+        <div class="flash-front">
+          <div class="text-xs font-mono text-blue-300 mb-2">10</div>
+          <div class="text-lg font-bold text-white">Problem atrybucji</div>
+          <div class="text-xs text-slate-500 mt-auto">→ kliknij</div>
+        </div>
+        <div class="flash-back">
+          <div class="text-sm text-white">3 poziomy: <strong>techniczny → organizacyjny → polityczny</strong>. Sprzyja gray zone.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="reveal mt-32 pt-16 pb-12 border-t border-slate-800/50">
+  <div class="max-w-4xl mx-auto text-center">
+    <div class="inline-flex items-center gap-2 mb-6">
+      <span class="glow-dot"></span>
+      <span class="text-xs font-mono tracking-[0.3em] uppercase text-slate-400">Powodzenia na egzaminie</span>
+    </div>
+    <h3 class="text-4xl md:text-5xl font-black gradient-text mb-4">Gotowy.</h3>
+    <p class="text-slate-400 max-w-lg mx-auto text-sm mb-8">10 pytań, 10 odpowiedzi, 10 flashcards. Wszystko w jednym pliku — otwórz w dowolnej przeglądarce, ucz się offline.</p>
+
+    <div class="flex flex-wrap justify-center gap-3">
+      <span class="tag tag-cyan">NATO AJP-3.20</span>
+      <span class="tag tag-violet">Ustawa o KSC</span>
+      <span class="tag">Doktryna sojusznicza</span>
+      <span class="tag tag-rose">Literatura przedmiotu</span>
+    </div>
+
+    <div class="mt-12 text-xs font-mono text-slate-600">
+      cyber.sec // study.edition // 2026
+    </div>
+  </div>
+</footer>
+
+</main>
+
+<script>
+  // ---- Reading progress bar + scroll-to-top ----
+  const bar = document.getElementById('progressBar');
+  const scrollTop = document.getElementById('scrollTop');
+  const updateBar = () => {
+    const scrolled = window.scrollY;
+    const max = document.documentElement.scrollHeight - window.innerHeight;
+    bar.style.width = (scrolled / max) * 100 + '%';
+    if (scrollTop) scrollTop.classList.toggle('show', scrolled > 800);
+  };
+  window.addEventListener('scroll', updateBar, { passive: true });
+  updateBar();
+  if (scrollTop) scrollTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+
+  // ---- Reveal on scroll ----
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible'); });
+  }, { threshold: 0.1, rootMargin: '-50px' });
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+  // ---- Sections & nav ----
+  const navLinks = document.querySelectorAll('.nav-link');
+  const mnavBtns = document.querySelectorAll('.mnav-btn');
+  const sectionIds = ['q1','q2','q3','q4','q5','q6','q7','q8','q9','q10','flash'];
+  const sections = sectionIds.map(id => document.getElementById(id)).filter(Boolean);
+  const questionIds = sectionIds.filter(id => id.startsWith('q'));
+
+  const setActive = () => {
+    const firstTop = sections[0] && sections[0].getBoundingClientRect().top;
+    let currentId = firstTop > 300 ? 'top' : sections[0].id;
+    for (const s of sections) {
+      if (s.getBoundingClientRect().top < 200) currentId = s.id;
+    }
+    navLinks.forEach(l => l.classList.toggle('active', l.getAttribute('href') === '#' + currentId));
+    mnavBtns.forEach(b => b.classList.toggle('active', b.dataset.target === currentId));
+
+    const activeBtn = document.querySelector('.mnav-btn.active');
+    const mnavInner = document.querySelector('.mobile-nav-inner');
+    if (activeBtn && mnavInner) {
+      const offset = activeBtn.offsetLeft - (mnavInner.clientWidth / 2) + (activeBtn.clientWidth / 2);
+      mnavInner.scrollTo({ left: offset, behavior: 'smooth' });
+    }
+  };
+  window.addEventListener('scroll', setActive, { passive: true });
+  setActive();
+
+  mnavBtns.forEach(btn => btn.addEventListener('click', () => {
+    if (navigator.vibrate) navigator.vibrate(10);
+  }));
+
+  // ---- Mark as learned (localStorage) ----
+  const LS_KEY = 'cyber-study.learned.v1';
+  const getLearned = () => {
+    try { return new Set(JSON.parse(localStorage.getItem(LS_KEY) || '[]')); }
+    catch (e) { return new Set(); }
+  };
+  const saveLearned = (set) => {
+    try { localStorage.setItem(LS_KEY, JSON.stringify([...set])); } catch (e) {}
+  };
+  let learned = getLearned();
+
+  const progressChip = document.getElementById('progressChip');
+  const countNum = document.getElementById('countNum');
+  const progressFill = document.getElementById('progressFill');
+  const resetBtn = document.getElementById('resetProgress');
+
+  const refreshProgress = () => {
+    const count = learned.size;
+    if (countNum) countNum.textContent = String(count);
+    if (progressFill) progressFill.style.width = (count / 10) * 100 + '%';
+    if (progressChip) progressChip.style.display = count > 0 ? 'inline-flex' : 'none';
+    questionIds.forEach(id => {
+      const section = document.getElementById(id);
+      if (section) section.classList.toggle('learned', learned.has(id));
+    });
+  };
+
+  if (resetBtn) resetBtn.addEventListener('click', () => {
+    if (confirm('Wyczyścić wszystkie oznaczenia "opanowane"?')) {
+      learned.clear(); saveLearned(learned); refreshProgress(); renderLearnButtons();
+    }
+  });
+
+  // Inject learn buttons into each question's left column (DOM APIs, no innerHTML)
+  const renderLearnButtons = () => {
+    const labelOff = 'Oznacz jako opanowane';
+    const labelOn  = 'Opanowane';
+    questionIds.forEach(id => {
+      const section = document.getElementById(id);
+      if (!section) return;
+      let btn = section.querySelector('.learn-btn');
+      if (!btn) {
+        const leftCol = section.querySelector('div.lg\\:w-1\\/3');
+        if (!leftCol) return;
+        btn = document.createElement('button');
+        btn.className = 'learn-btn mt-4';
+        btn.type = 'button';
+        const icon = document.createElement('span');
+        icon.className = 'check-icon';
+        const label = document.createElement('span');
+        label.className = 'btn-label';
+        btn.appendChild(icon);
+        btn.appendChild(label);
+        btn.addEventListener('click', () => {
+          if (learned.has(id)) learned.delete(id); else learned.add(id);
+          saveLearned(learned); refreshProgress(); renderLearnButtons();
+          if (navigator.vibrate) navigator.vibrate(15);
+        });
+        leftCol.appendChild(btn);
+      }
+      const isLearned = learned.has(id);
+      btn.classList.toggle('learned', isLearned);
+      const lbl = btn.querySelector('.btn-label');
+      if (lbl) lbl.textContent = isLearned ? labelOn : labelOff;
+    });
+  };
+
+  renderLearnButtons();
+  refreshProgress();
+
+  // ---- Keyboard shortcuts ----
+  const findCurrentSectionIndex = () => {
+    let idx = -1;
+    for (let i = 0; i < sections.length; i++) {
+      if (sections[i].getBoundingClientRect().top < 200) idx = i;
+    }
+    return idx;
+  };
+
+  document.addEventListener('keydown', (e) => {
+    if (e.target.matches('input, textarea, [contenteditable]')) return;
+    if (e.metaKey || e.ctrlKey || e.altKey) return;
+    const idx = findCurrentSectionIndex();
+    if (e.key === 'ArrowRight' || e.key === 'j' || e.key === 'J') {
+      e.preventDefault();
+      const next = sections[Math.min(idx + 1, sections.length - 1)];
+      if (next) next.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    } else if (e.key === 'ArrowLeft' || e.key === 'k' || e.key === 'K') {
+      e.preventDefault();
+      if (idx <= 0) window.scrollTo({ top: 0, behavior: 'smooth' });
+      else sections[idx - 1].scrollIntoView({ behavior: 'smooth', block: 'start' });
+    } else if (e.key === 'l' || e.key === 'L') {
+      e.preventDefault();
+      if (idx >= 0 && idx < questionIds.length) {
+        const id = questionIds[idx];
+        if (learned.has(id)) learned.delete(id); else learned.add(id);
+        saveLearned(learned); refreshProgress(); renderLearnButtons();
+      }
+    } else if (e.key === 'Home') {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  });
+
+  // ---- First-run keyboard hint (desktop only) ----
+  const HINT_KEY = 'cyber-study.kbdHint.seen';
+  const kbdHint = document.getElementById('kbdHint');
+  if (kbdHint && !localStorage.getItem(HINT_KEY) && window.matchMedia('(min-width: 1280px)').matches) {
+    setTimeout(() => kbdHint.classList.add('show'), 1800);
+    setTimeout(() => kbdHint.classList.remove('show'), 7000);
+    localStorage.setItem(HINT_KEY, '1');
+  }
+
+  // ---- Service Worker — full offline ----
+  if ('serviceWorker' in navigator) {
+    window.addEventListener('load', () => {
+      navigator.serviceWorker.register('sw.js').catch(() => {});
+    });
+  }
+</script>
+
+</body>
+</html>

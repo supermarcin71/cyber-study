@@ -1,0 +1,18 @@
+{
+  "name": "Cyberbezpieczeństwo i cyberwojna — 10 pytań",
+  "short_name": "Cyber Study",
+  "description": "Interaktywne notatki egzaminacyjne — 10 pytań, doktryna NATO, prawo polskie, flashcards.",
+  "lang": "pl",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#020617",
+  "theme_color": "#020617",
+  "categories": ["education", "productivity"],
+  "icons": [
+    { "src": "icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ]
+}
