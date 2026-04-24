@@ -1,4 +1,4 @@
-# 🛡️ Cyber Study — Cyberbezpieczeństwo i cyberwojna
+# 🛡️ Cyber Study - Cyberbezpieczeństwo i cyberwojna
 
 Interaktywne notatki egzaminacyjne w formie jednostronicowej aplikacji: 10 pytań, 10 odpowiedzi, flashcards. W pełni offline, optymalizowane pod iPhone'a i PWA.
 
@@ -9,19 +9,19 @@ Live: https://supermarcin71.github.io/cyber-study/
 ## ✨ Funkcje
 
 - **10 pytań egzaminacyjnych** z pełnymi odpowiedziami, tabelami porównawczymi, timeline'ami
-- **Flashcards** — tapnięcie obraca kartę, pokazuje odpowiedź
-- **„Mark as learned"** — pod każdym pytaniem; postęp zapisany w `localStorage` (`2/10` w rogu)
-- **Skróty klawiaturowe** — `←` `→` nawigacja, `L` oznacz jako opanowane, `Home` powrót na górę
-- **Offline-first** — Service Worker cache'uje wszystko przy pierwszym załadowaniu
-- **PWA** — „Add to Home Screen" w Safari iOS → działa jak natywna aplikacja
-- **Responsywne** — testowane na iPhone 15 Pro Max, tablet, desktop
-- **Ciemny motyw** — mesh gradient + glassmorphism + subtelne animacje
+- **Flashcards** - tapnięcie obraca kartę, pokazuje odpowiedź
+- **„Mark as learned"** - pod każdym pytaniem; postęp zapisany w `localStorage` (`2/10` w rogu)
+- **Skróty klawiaturowe** - `←` `→` nawigacja, `L` oznacz jako opanowane, `Home` powrót na górę
+- **Offline-first** - Service Worker cache'uje wszystko przy pierwszym załadowaniu
+- **PWA** - „Add to Home Screen" w Safari iOS → działa jak natywna aplikacja
+- **Responsywne** - testowane na iPhone 15 Pro Max, tablet, desktop
+- **Ciemny motyw** - mesh gradient + glassmorphism + subtelne animacje
 
 ---
 
 ## 🚀 Uruchomienie lokalne
 
-Plik `index.html` działa bezpośrednio w przeglądarce — nie wymaga żadnego serwera:
+Plik `index.html` działa bezpośrednio w przeglądarce - nie wymaga żadnego serwera:
 
 ```bash
 open index.html
@@ -77,10 +77,10 @@ Brak zależności zewnętrznych. Brak buildu. Brak CDN.
 - Doktryna sojusznicza NATO (AJP-3.20 — operacje w cyberprzestrzeni)
 - Ustawa o krajowym systemie cyberbezpieczeństwa z 5 lipca 2018 r. (wraz z nowelizacją)
 - Strategia Cyberbezpieczeństwa RP (2026)
-- Literatura przedmiotu — klasyczne definicje z polskiej politologii bezpieczeństwa
+- Literatura przedmiotu - klasyczne definicje z polskiej politologii bezpieczeństwa
 
 ---
 
 ## 📜 Licencja
 
-MIT — do swobodnego kopiowania, modyfikowania i udostępniania. Zerżnięcie layoutu przed swoim egzaminem mile widziane.
+MIT - do swobodnego kopiowania, modyfikowania i udostępniania. Zerżnięcie layoutu przed swoim egzaminem mile widziane.
