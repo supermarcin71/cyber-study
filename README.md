@@ -42,7 +42,7 @@ python3 -m http.server 8000
 
 1. Otwórz stronę w Safari
 2. Tapnij **Share** → **Add to Home Screen**
-3. Ikona pojawi się na ekranie głównym — fullscreen, bez paska Safari, działa offline
+3. Ikona pojawi się na ekranie głównym - fullscreen, bez paska Safari, działa offline
 
 ---
 
